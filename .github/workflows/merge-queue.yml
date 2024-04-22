@@ -15,4 +15,4 @@ jobs:
         tree -a -I '.git'
         git status
     - name: Run slow CI (emulated by a long sleep)
-      run: sleep 3600
+      run: sleep 3500
