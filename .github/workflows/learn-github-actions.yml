@@ -11,3 +11,10 @@ jobs:
           node-version: '20'
       - run: npm install -g bats
       - run: bats -v
+  build:
+    runs-on: self-hosted
+    name: wait-job
+    steps:
+      - name: Sleep for 3 minutes
+        run: sleep 180s
+        shell: bash
