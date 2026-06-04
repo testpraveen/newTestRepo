@@ -1,0 +1,11 @@
+name: Manual Trigger Only
+
+on:
+  workflow_dispatch:
+
+jobs:
+  noop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do nothing
+        run: echo "This workflow was manually triggered, but does nothing."
