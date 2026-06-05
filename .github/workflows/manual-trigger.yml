@@ -2,6 +2,11 @@ name: Manual Trigger Only
 
 on:
   workflow_dispatch:
+    inputs:
+      name:
+        description: "A name that does absolutely nothing"
+        required: false
+        type: string
 
 jobs:
   noop:
