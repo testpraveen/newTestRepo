@@ -1,13 +1,13 @@
 name: Manual Trigger Only
 
-on:
+on:                                                                                                                                                                                    
   workflow_dispatch:
-    inputs:
-      name:
-        description: "A name that does absolutely nothing"
-        required: false
-        type: string
-
+    inputs:                                                                                                                                                                            
+      env:                                                                                                                                                                             
+        description: 'Target environment'                                                                                                                                              
+        required: false                                                                                                                                                                
+        default: 'staging'   
+        
 jobs:
   noop:
     runs-on: ubuntu-latest
