@@ -1,0 +1,18 @@
+name: Create Bot Issue Test
+
+on:
+  workflow_dispatch: # Allows you to run this manually from the Actions tab
+
+jobs:
+  create_issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write # Crucial: gives the bot permission to write issues
+    steps:
+      - name: Create Issue as Bot
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/${{ github.repository }}/issues \
+            -d '{"title":"Test Issue from Bot","body":"This issue was authored by a bot via GitHub Actions."}'
